@@ -42,3 +42,34 @@ const expect = function (val) {
 
 // console.log(e);
 // console.log(e2);
+
+// 4. Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+
+// The three functions are:
+// increment() increases the current value by 1 and then returns it.
+// decrement() reduces the current value by 1 and then returns it.
+// reset() sets the current value to init and then returns it.
+
+let createCounter2 = function (init) {
+  let currentValue = init;
+  return {
+    increment: function () {
+      currentValue += 1;
+      return currentValue;
+    },
+    decrement: function () {
+      currentValue -= 1;
+      return currentValue;
+    },
+    reset: function () {
+      currentValue = init;
+      return currentValue;
+    },
+  };
+};
+
+const counter2 = createCounter2(5);
+// Call the functions and log the results
+console.log(counter2.increment()); // Output: 6
+console.log(counter2.reset()); // Output: 5
+console.log(counter2.decrement()); // Output: 4
