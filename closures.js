@@ -7,7 +7,9 @@ var createHelloWorld = function () {
 };
 
 const f = createHelloWorld();
-console.log(f());
+// console.log(f());
+
+/*------------------------------------------------------*/
 
 // 2. Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
 
@@ -19,9 +21,11 @@ let createCounter = function (n) {
 
 let counter = createCounter(10);
 
-console.log(counter()); //output : 10
-console.log(counter()); //output : 11
-console.log(counter()); // output : 12
+// console.log(counter()); //output : 10
+// console.log(counter()); //output : 11
+// console.log(counter()); // output : 12
+
+/*------------------------------------------------------*/
 
 // 3. Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.
 // ** toBe(val) accepts another value and returns true if the two values === each other. If they are not equal, it should throw an error "Not Equal".
@@ -42,6 +46,8 @@ const expect = function (val) {
 
 // console.log(e);
 // console.log(e2);
+
+/*------------------------------------------------------*/
 
 // 4. Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
 
@@ -69,7 +75,29 @@ let createCounter2 = function (init) {
 };
 
 const counter2 = createCounter2(5);
-// Call the functions and log the results
-console.log(counter2.increment()); // Output: 6
-console.log(counter2.reset()); // Output: 5
-console.log(counter2.decrement()); // Output: 4
+// // Call the functions and log the results
+// console.log(counter2.increment()); // Output: 6
+// console.log(counter2.reset()); // Output: 5
+// console.log(counter2.decrement()); // Output: 4
+
+/*------------------------------------------------------*/
+
+// 5. Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+// The returned array should be created such that returnedArray[i] = fn(arr[i], i).
+// Please solve it without the built-in Array.map method
+
+const map = function (arr, fn) {
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    array[i] = fn(arr[i], i);
+  }
+  return array;
+};
+// Example usage:
+function plusone(n) {
+  return n + 1;
+}
+
+const arr = [1, 2, 3];
+const result = map(arr, plusone);
+// console.log(result); // Output: [2,3,4]
